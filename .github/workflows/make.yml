@@ -13,14 +13,20 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Setup Emscripten
-        uses: mymindstorm/setup-emsdk@v7
+        uses: mymindstorm/setup-emsdk@v12
         with:
           version: 2.0.5
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Build Native BusyBox
         run: make $MAKEFLAGS build/native/busybox URL_BUSYBOX=$URL_BUSYBOX URL_MINIZ=$URL_MINIZ URL_DIFF3=$URL_DIFF3
 
       - name: Build Wasm BusyBox
         run: make $MAKEFLAGS build/wasm/busybox_unstripped.js URL_BUSYBOX=$URL_BUSYBOX URL_MINIZ=$URL_MINIZ URL_DIFF3=$URL_DIFF3
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: build
+          path: build
