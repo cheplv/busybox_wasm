@@ -1,0 +1,11 @@
+--- a/build/wasm/Makefile	2025-01-31 10:41:22.161993821 +0000
++++ b/build/wasm/Makefile	2025-01-31 10:41:40.203993090 +0000
+@@ -289,7 +289,7 @@
+ # Make variables (CC, etc...)
+ 
+ AS		= $(CROSS_COMPILE)as
+-CC		= $(CROSS_COMPILE)gcc
++CC		= $(CROSS_COMPILE)cc
+ LD		= $(CC) -nostdlib
+ CPP		= $(CC) -E
+ AR		= $(CROSS_COMPILE)ar
