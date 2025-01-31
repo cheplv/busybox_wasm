@@ -3,7 +3,7 @@ name: make
 on: workflow_dispatch
 
 env:
-  URL_BUSYBOX: https://busybox.net/downloads/busybox-1.32.0.tar.bz2
+  URL_BUSYBOX: https://busybox.net/downloads/busybox-1.37.0.tar.bz2
   URL_MINIZ: https://github.com/richgel999/miniz/releases/download/2.1.0/miniz-2.1.0.zip
   URL_DIFF3: https://raw.githubusercontent.com/openbsd/src/master/usr.bin/diff3/diff3prog.c
   MAKEFLAGS: -j2
