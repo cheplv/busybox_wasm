@@ -5,6 +5,10 @@ extern jmp_buf vfork_jump_buffer;
 int em_vfork(int is_parent);
 void em_exit(int status);
 int em_execvp(const char *file, char *const argv[]);
+
+int js_fork(void);
+void js_unfork(int status);
+int js_spawn(const char *file, char *const argv[]);
 pid_t js_waitpid(pid_t pid, int *status, int options);
 
 #define vfork() (em_vfork(setjmp(vfork_jump_buffer)))
