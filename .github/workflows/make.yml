@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build Wasm BusyBox
-        run: make $MAKEFLAGS build/wasm/busybox_unstripped.js URL_BUSYBOX=$URL_BUSYBOX URL_MINIZ=$URL_MINIZ URL_DIFF3=$URL_DIFF3
+        run: make $MAKEFLAGS build/wasm/busybox URL_BUSYBOX=$URL_BUSYBOX URL_MINIZ=$URL_MINIZ URL_DIFF3=$URL_DIFF3
       
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
